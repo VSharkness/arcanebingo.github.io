@@ -68,7 +68,6 @@ button:active {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más suave cuando se presiona */
 }
 
-
 /* Grid container */
 #grid-container {
     display: grid;
