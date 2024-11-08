@@ -1,0 +1,159 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Main container */
+.container {
+    text-align: center;
+}
+
+/* Input container styling */
+.input-container {
+    margin-bottom: 20px;
+}
+
+input {
+    margin: 0 10px;
+    padding: 5px;
+    width: 100px;
+    background-color: #333;
+    color: #f0f0f0;
+    border: 1px solid #444;
+}
+
+/* Button styling */
+button {
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradiente azul-morado */
+    color: white;
+    border: 1px solid #444;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Suave transición para el hover */
+}
+
+/* Hover effect */
+button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Invertir el gradiente */
+    transform: scale(1.05); /* Efecto de aumento al pasar sobre el botón */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+/* Focus effect */
+button:focus {
+    outline: none; /* Eliminar el contorno predeterminado */
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.7); /* Resaltar con sombra azul */
+}
+
+/* Active effect */
+button:active {
+    transform: scale(0.98); /* Efecto de presión */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más suave cuando se presiona */
+}
+
+
+/* Grid container */
+#grid-container {
+    display: grid;
+    gap: 2px;
+    margin-top: 20px;
+    --cell-size: 150px;
+    grid-template-columns: repeat(auto-fill, var(--cell-size));
+}
+
+/* Cambiar el cursor a una mano cuando se pasa sobre la celda */
+.grid-cell {
+    position: relative;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(229, 255, 0);
+    overflow: hidden;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Borde negro alrededor del texto */
+    cursor: pointer; /* Cambiar cursor a mano */
+    user-select: none; /* Deshabilitar la selección de texto */
+}
+
+/* Cambiar el cursor al pasar sobre las celdas */
+.grid-cell:hover {
+    cursor: pointer;
+}
+
+/* Estilo para las celdas oscuras por defecto */
+.grid-cell.darkened {
+    opacity: 0.5; /* Celdas oscurecidas */
+}
+
+/* Icons styling inside grid cell */
+.grid-cell .edit-icon, 
+.grid-cell .clear-icon, 
+.grid-cell .image-icon {
+    position: absolute;
+    font-size: 17px;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* Show icons on hover */
+.grid-cell:hover .edit-icon,
+.grid-cell:hover .clear-icon,
+.grid-cell:hover .image-icon {
+    opacity: 1;
+}
+
+/* Icon positions */
+.grid-cell .clear-icon { bottom: 5px; right: 5px; }
+.grid-cell .edit-icon { top: 5px; right: 5px; }
+.grid-cell .image-icon { bottom: 5px; left: 5px; }
+
+/* Hide image input */
+.image-input { display: none; }
+
+/* Textarea styling */
+textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #333;
+    color: #f0f0f0;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+/* Asegurarse de que el texto no sea seleccionable */
+textarea, .grid-cell {
+    user-select: none;
+}
